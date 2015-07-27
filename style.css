@@ -57,7 +57,16 @@ body {
   display: none;
   width: 50%;
   height: 5%;
+  top: 70%;
   font-size: 23.5;
   font-weight: bold;
-  margin: 0 auto;
+}
+
+.search-bar:focus {
+  background-color: #EEE;
+  opacity: 5;
+}
+
+.search-bar:hover {
+  opacity: 2;
 }
