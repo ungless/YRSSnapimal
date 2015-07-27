@@ -10,6 +10,7 @@ include 'nav.php';
 </head>
 <body>
   <div class="container">
+    <img src="logo.svg" alt="" />
   <h1>Gotta Snap 'em all</h1>
 
   <button type="button" class="btn btn-primary">Start</button>

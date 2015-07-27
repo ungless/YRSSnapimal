@@ -3,5 +3,5 @@
   <span class="nav-item"><a href="#"></a></span>
   <span class="nav-item"><a href="#"></a></span>
   <span class="nav-item"><a href="#"></a></span>
-  <a class="button" href="#">Submit a new Snapimal</a>
+  <a class="button" href="submit.php">Submit a new Snapimal</a>
 </nav>

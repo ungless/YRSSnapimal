@@ -2,8 +2,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.container {
+.center {
   text-align: center;
+}
+.container {
   font-family: sans-serif;
 }
 
@@ -12,8 +14,13 @@ body {
   font-weight: bold;
 }
 
+img {
+  display: inline;
+}
+
 .button {
-  border-radius: 8px;
+  border-radius: 4px;
+  text-decoration: none;
   color: white;
   border: solid #d2d7d3;
   background-color: #abb7b7;
