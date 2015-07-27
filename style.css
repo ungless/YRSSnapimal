@@ -8,8 +8,8 @@ body {
 .box {
   background-color: #C5EFF7;
   position: relative;
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
   margin: auto;
   padding-left: 20px;
   display: flex;
@@ -19,18 +19,18 @@ body {
 .search-ico {
   width: 400px;
   height: 200px;
-  padding: 20px;
+
 
   position: absolute;
   top: 50%;
   left: 25%;
 
   margin: -70px 0 0 -170px;
+  transition: 0.7s;
 }
 .sub-ico {
   width: 400px;
   height: 200px;
-  padding: 20px;
 
   position: absolute;
   top: 50%;
@@ -50,16 +50,14 @@ body {
   transition: 0.3s;
 }
 
-.search-square {
-  border: white;
-  border-top: 5px solid #446CB3;
-  border-bottom: 5px solid #446CB3;
-  padding: 10px;
-  font-size: 35px;
-  width: 100%;
-  height: 55px;
-  text-align: center;
-  color: #446CB3;
-  placeholder: #44CB3;
+.search-bar {
+  border-radius: 10px;
+  border: 4px solid #d35400;
   background-color: white;
+  display: none;
+  width: 50%;
+  height: 5%;
+  font-size: 23.5;
+  font-weight: bold;
+  margin: 0 auto;
 }
