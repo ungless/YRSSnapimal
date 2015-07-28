@@ -55,11 +55,11 @@ body {
   border-radius: 10px;
   border: 4px solid #d35400;
   background-color: white;
+  width: 0;
   display: none;
-  width: 50%;
   height: 5%;
+  margin: 25% auto;
   top: 70%;
-  margin: 0 auto;
   font-size: 23.5;
   font-weight: bold;
 }

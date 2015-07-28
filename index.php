@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-  <link rel="icon" type="image/ico" href="favicon.ico"> 
+  <link rel="icon" type="image/ico" href="favicon.ico">
 </head>
 <body>
   <div class="box">
