@@ -72,3 +72,7 @@ body {
 .search-bar:hover {
   opacity: 2;
 }
+
+.map {
+  height: 800px;
+}
