@@ -51,6 +51,7 @@ body {
 }
 
 .search-bar {
+  padding-top: 0.1em;
   border-radius: 10px;
   border: 4px solid #d35400;
   background-color: white;
@@ -58,7 +59,7 @@ body {
   width: 50%;
   height: 5%;
   top: 70%;
-  margin: auto;
+  margin: 0 auto;
   font-size: 23.5;
   font-weight: bold;
 }
