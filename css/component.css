@@ -1,4 +1,4 @@
-cdo/* Morph Button: Default Styles */
+/* Morph Button: Default Styles */
 
 .morph-button {
 	position: relative;
@@ -6,7 +6,7 @@ cdo/* Morph Button: Default Styles */
 	margin: 0 auto;
 }
 
-.content-style-form { background-color: #FFFFFF; height: 150% }
+.content-style-form { background-color: #FFFFFF; }
 
 .morph-button > button {
 	position: relative;
@@ -101,7 +101,7 @@ cdo/* Morph Button: Default Styles */
 .morph-button-overlay.open .morph-content,
 .morph-button-sidebar.open .morph-content {
 	-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
-	transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+	transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;	
 }
 
 /* Morph Button Style: Overlay */
@@ -232,7 +232,7 @@ cdo/* Morph Button: Default Styles */
 .morph-button-modal-3.open .morph-content {
 	margin: -255px 0 0 -210px;
 	width: 420px;
-	height: 510px;
+	height: 660px;
 }
 
 .morph-button-modal-3.open .morph-content > div {
