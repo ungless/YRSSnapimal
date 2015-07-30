@@ -11,7 +11,7 @@
         <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
         <link rel="shortcut icon" href="img/favicon.ico">
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css"
+        <link rel="stylesheet" type="text/css" href="css/demo.css">
         <link rel="stylesheet" type="text/css" href="css/component.css" />
         <link rel="stylesheet" type="text/css" href="css/content.css" />
         <script src="js/modernizr.custom.js"></script>
