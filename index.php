@@ -39,7 +39,7 @@
             <!-- Top Navigation -->
 
             <header class="codrops-header">
-                <h1>I didn't code this</h1>
+                <img src="name.svg" alt="search" class="search-ico"/>
 
             </header>
 
