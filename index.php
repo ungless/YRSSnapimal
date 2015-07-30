@@ -1,6 +1,7 @@
 <?php
   include 'db.php';
  ?>
+ <!DOCTYPE HTML>
 <html lang="en" class="no-js">
     <head>
         <meta charset="UTF-8" />
@@ -10,8 +11,9 @@
         <meta name="description" content="Morphing Buttons Concept: Inspiration for revealing content by morphing the action element" />
         <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
         <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css"
+        <link rel="stylesheet" type="text/css" href="css/demo.css"/>
         <link rel="stylesheet" type="text/css" href="css/component.css" />
         <link rel="stylesheet" type="text/css" href="css/content.css" />
         <script src="js/modernizr.custom.js"></script>
@@ -53,8 +55,7 @@
                                     <span class="icon icon-close">Close the dialog</span>
                                     <h2>Login</h2>
                                     <form>
-                                        <p><label>Email</label><input type="text" /></p>
-                                        <p><label>Password</label><input type="password" /></p>
+                                        <p><input type="search" rows="1" name="search" placeholder="Search for animals">
                                         <p><button>Login</button></p>
                                     </form>
                                 </div>
@@ -99,6 +100,9 @@
             </section>
 
         </div><!-- /container -->
+        <<script src="js/jquery.js">
+
+        </script>
         <script src="js/classie.js"></script>
         <script src="js/uiMorphingButton_fixed.js"></script>
         <script src="js/UIMorphingButton_inflow.js"></script>
@@ -176,8 +180,24 @@
             });
         </script>
         <?php
-          $select_from_db = 'SELECT * FROM `submissions` ORDER BY id LIMIT 5';
-          echo $select_from_db;
+          $select_from_db = "SELECT * FROM $tbl_name ORDER BY id desc LIMIT 5";
+
+          $result = mysql_query($select_from_db);
+
+          if (!$result) {
+            echo "Something went wrong! :(";
+            print mysql_error();
+          }
+
+          echo '<h1 align="center">Latest finds</h1>';
+          echo '<ul style="width: 100%;">';
+
+          while ($row = mysql_fetch_assoc($result)) {
+            echo '<li style="list-style-type: none; display: inline; margin: 0; height: 100%; text-align: center; padding: 0 !important; width: 100%;">
+            <img class="bottom-images" style="width: 19%; padding: 0; margin: 0 0 0 0; " src="image_uploads/' . $row['image'] . '" title="' . $row['description'] . '"/></li>'."\n";
+          }
+          echo '<ul>';
+           print mysql_error();
         ?>
 
         <img src="" alt="" class="latest-images">

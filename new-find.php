@@ -34,7 +34,7 @@ if ($error == UPLOAD_ERR_OK) {
      print mysql_error();
 }
 
-    // header('Location: http://max.dev/YRSSnapimal/index.html');
+    header('Location: http://max.dev/YRSSnapimal/index.php');
     print 'image: <img src="image_uploads/'. $name . '"height="100px" width="100px"></br>';
 
     ?>
