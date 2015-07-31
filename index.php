@@ -17,9 +17,10 @@ include 'db.php';
         <link rel="stylesheet" type="text/css" href="css/component.css" />
         <link rel="stylesheet" type="text/css" href="css/content.css" />
         <script src="js/modernizr.custom.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
         <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
         <script src="js/jquery.js"></script>
         <style>
             button:hover {
@@ -93,7 +94,13 @@ include 'db.php';
                                             </div>
                                             <input type="int" name="lat" placeholder="Latitude">
                                             <input type="int" name="lon" placeholder="Longitude">
-
+                                            <select class="" name="cat">
+                                              <option>Bird</option>
+                                              <option>Amphibian</option>
+                                              <option>Reptile</option>
+                                              <option>Water animal</option>
+                                              <option>Land Mammal</option>
+                                            </select>
                                         <div style="float:left; width:100%; padding:0px 0px 10px 0px;">
 
                                             <div style="float:left; width:5%; padding:9px 0px 10px 0px">
@@ -118,7 +125,17 @@ include 'db.php';
 
                 </div><!-- /form-mockup -->
             </section>
-
+            <div class="desc-of-proj">
+            <h1>What is it?</h1>
+            <p>Snapimal is an online tool for animal entuisiasts to track rare or exciting animals and document it all on a simple, yet informative map.
+              The user can select from three different catageries. <ul>
+                <li>Birds</li>
+                <li>Land Mammals</li>
+                <li>Reptiles</li>
+                <li>Amphibians</li>
+                <li>Water animals</li>
+            </ul>
+            </div>
         </div><!-- /container -->
         <script src="js/classie.js"></script>
         <script src="js/uiMorphingButton_fixed.js"></script>
@@ -207,12 +224,12 @@ include 'db.php';
           echo '<ul style="width: 100%; padding: 0; margin: 0;">';
 
           while ($row = mysql_fetch_assoc($result)) {
-            echo '<li style="list-style-type: none; float: left; display: inline; margin: 0; height: 100%; text-align: center; padding: 0 !important; width: 20%; text-align: center;">
-            <div style="background-color: white;"> <img class="bottom-images" style="padding: 0; height: auto; width: 100%; background-color: white; margin: 0 0 0 0; " src="image_uploads/'
-             . $row['image'] . '" title="' . $row['name'] . '"/></div>
+            echo '<li style="list-style-type: none; float: left; display: inline; margin: 0; height: 100%; background-color: #67C2D4; text-align: center; padding: 0 !important; width: 20%; text-align: center;">
             <div style="display: inline; background-color: white; "><h2>'
             . $row['name'] .
-            '</h2></div>
+            '<div style="background-color: white;"> <img class="bottom-images" style="padding: 0 0; width: 100%; background-color: white; margin: 0 0 0 0; " src="image_uploads/'
+             . $row['image'] . '" title="' . $row['name'] . '"/></div>
+            </h2></div>
             </li>'."\n";
           }
 
@@ -268,21 +285,37 @@ include 'db.php';
         #map h3 { margin-bottom:10px; color:#000; font-size:24px; border-bottom:1px solid #CCCCCC; letter-spacing:-1px;}
         .popup_wrapper img {  margin-right:10px; border:1px solid #CCCCCC;}
         #map p { margin:0px;}
+
+        .type_check {
+          width: 300px;
+          height: 25%;
+        }
+        .map-wrapper {
+          width: 100%;
+
+        }
         </style>
 
         <div class="map_wrapper">
           <div class="show_hide_checkbox_wrapper">
 
-          <div id="mam_checkbox_wrapper">
-          <input type="checkbox" name="mam_checkbox" id="mam_checkbox" onclick="fn_mam_checked(this.checked);"/> Hide/Show Birds
+          <div id="brd_checkbox_wrapper" class="checkbox-wrapper">
+          <input type="checkbox" class="type_check" name="brd_checkbox" id="brd_checkbox" onclick="fn_brd_checked(this.checked);"/> Hide/Show Birds
           </div>
 
-          <div id="amp_checkbox_wrapper">
-          <input type="checkbox" name="amp_checkbox" id="amp_checkbox" onclick="fn_amp_checked(this.checked);"/> Hide/Show Frogs/Snakes
+          <div id="rep_checkbox_wrapper" class="checkbox-wrapper">
+          <input type="checkbox" class="type_check" name="rep_checkbox" id="rep_checkbox" onclick="fn_rep_checked(this.checked);"/> Hide/Show Reptiles
           </div>
 
-          <div id="coral_checkbox_wrapper">
-          <input type="checkbox" name="coral_checkbox" id="coral_checkbox" onclick="fn_coral_checked(this.checked);"/> Hide/Show Fish
+          <div id="wat_checkbox_wrapper" class="checkbox-wrapper">
+          <input type="checkbox" class="type_check" name="wat_checkbox" id="wat_checkbox" onclick="fn_wat_checked(this.checked);"/> Hide/Show Water animals
+          </div>
+
+          <div id="amp_checkbox_wrapper" class="checkbox-wrapper">
+          <input type="checkbox" class="type_check" name="amp_checkbox" id="amp_checkbox" onclick="fn_amp_checked(this.checked);"/> Hide/Show Amphibians
+          </div
+          <div id="mam_checkbox_wrapper" class="checkbox-wrapper">
+          <input type="checkbox" class="type_check" name="mam_checkbox" id="mam_checkbox" onclick="fn_mam_checked(this.checked);"/> Hide/Show Land mammals
           </div>
 
 
@@ -290,12 +323,13 @@ include 'db.php';
 
 
 
+
+              <div id="map"></div>
+
           </div>
 
 
-        <div id="map" algin="center"></div>
 
-        </div>
 
         <script>
 
@@ -326,13 +360,13 @@ include 'db.php';
             }
         });
 
-        var mamIcon = new LeafIcon({iconUrl: 'img/camera.svg'}),
-            coralIcon = new LeafIcon({iconUrl: 'coral_reef_icon.png'}),
-            ampIcon = new LeafIcon({iconUrl: 'amphibian_icon.png'}),
-        	noIcon = new LeafIcon({iconUrl: '0.png'});
+        var mamIcon = new LeafIcon({iconUrl: 'img/elephant.svg'}),
+            watIcon = new LeafIcon({iconUrl: 'img/fish.svg'}),
+            ampIcon = new LeafIcon({iconUrl: 'img/from.svg'}),
+        	  repIcon = new LeafIcon({iconUrl: 'img/lizard.svg'});
+            brdIcon = new LeafIcon({iconUrl: 'img/bird.svg'});
 
         <!-- No Icon in there to cater for the one extra entry -->
-
 
         var markers = [
         <?php echo $markers; ?>
@@ -370,111 +404,123 @@ include 'db.php';
 
 
 
+</div>
+
+<div class="show_hide_checkbox_wrapper">
+
+<div id="mam_checkbox_wrapper">
+<input type="checkbox" name="mam_checkbox" id="mam_checkbox" onclick="fn_mam_checked(this.checked);"/> Hide/Show Mammal Fellows
+</div>
+
+<div id="amp_checkbox_wrapper">
+<input type="checkbox" name="amp_checkbox" id="amp_checkbox" onclick="fn_amp_checked(this.checked);"/> Hide/Show Amphibian Fellows
+</div>
+
+<div id="coral_checkbox_wrapper">
+<input type="checkbox" name="coral_checkbox" id="coral_checkbox" onclick="fn_coral_checked(this.checked);"/> Hide/Show Coral Reef Fellows
+</div>
 
 
+      <script>
+function fn_mam_checked(mam_checked)
+{
 
-        <script>
-        function fn_mam_checked(mam_checked)
-        {
+if(mam_checked)
+{
+for(i=0; i<=markers.length; i++){
 
-        if(mam_checked)
-        {
-        for(i=0; i<=markers.length; i++){
+if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
 
-        if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
+map.removeLayer(markers[i]);
 
-        map.removeLayer(markers[i]);
+}
 
-        }
+}
 
-        }
+}
+else
+{
+for(i=0; i<=markers.length; i++){
 
-        }
-        else
-        {
-        for(i=0; i<=markers.length; i++){
+if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
 
-        if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
+map.addLayer(markers[i]);
 
-        map.addLayer(markers[i]);
+}
 
-        }
+}
+}
 
-        }
-        }
-
-        }
-
-
-
-
-        function fn_amp_checked(amp_checked)
-        {
-
-        if(amp_checked)
-        {
-        for(i=0; i<=markers.length; i++){
-
-        if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
-
-        map.removeLayer(markers[i]);
-
-        }
-
-        }
-
-        }
-        else
-        {
-        for(i=0; i<=markers.length; i++){
-
-        if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
-
-        map.addLayer(markers[i]);
-
-        }
-
-        }
-        }
-
-        }
+}
 
 
 
 
-        function fn_coral_checked(coral_checked)
-        {
+function fn_amp_checked(amp_checked)
+{
 
-        if(coral_checked)
-        {
-        for(i=0; i<=markers.length; i++){
+if(amp_checked)
+{
+for(i=0; i<=markers.length; i++){
 
-        if(markers[i] && markers[i].options.tags.indexOf("Coral reef")> -1){
+if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
 
-        map.removeLayer(markers[i]);
+map.removeLayer(markers[i]);
 
-        }
+}
 
-        }
+}
 
-        }
-        else
-        {
-        for(i=0; i<=markers.length; i++){
+}
+else
+{
+for(i=0; i<=markers.length; i++){
 
-        if(markers[i] && markers[i].options.tags.indexOf("Coral reef")> -1){
+if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
 
-        map.addLayer(markers[i]);
+map.addLayer(markers[i]);
 
-        }
+}
 
-        }
-        }
+}
+}
 
-        }
-        </script>
-        <script src="js/jquery.js">
+}
 
-        </script>
+
+
+
+function fn_coral_checked(coral_checked)
+{
+
+if(coral_checked)
+{
+for(i=0; i<=markers.length; i++){
+
+if(markers[i] && markers[i].options.tags.indexOf("Coral reef")> -1){
+
+map.removeLayer(markers[i]);
+
+}
+
+}
+
+}
+else
+{
+for(i=0; i<=markers.length; i++){
+
+if(markers[i] && markers[i].options.tags.indexOf("Coral reef")> -1){
+
+map.addLayer(markers[i]);
+
+}
+
+}
+}
+
+}
+</script>
+        
     </body>
 </html>

@@ -1,0 +1,27 @@
+/* General styles */
+
+body {font-family:arial;}
+a {color:inherit;}
+
+/* Map */
+
+#edge_map {height:500px;}
+
+/* Search */
+
+button {background-color:#EE6E6E; color:white; border-style:none; padding:2px; font-weight:bold; cursor:pointer;}
+input {width:165px;}
+
+/* Popups */
+
+a.tabs {background-color:#EE6E6E; color:white; border-style:none; padding:5px; font-weight:bold; cursor:pointer; margin-right:5px;}
+li {display:none; padding:5px;}
+li.mammals {display:block;}
+.leaflet-popup-content {min-height:227px;}
+ul {max-height:150px; overflow-y:scroll; padding:0px;}
+ul li:nth-child(even) {  
+  background-color:LightGrey; color:black;
+}
+ul li:nth-child(odd) {  
+  background-color:grey; color:white;
+}
