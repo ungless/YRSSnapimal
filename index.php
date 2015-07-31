@@ -59,11 +59,10 @@ include 'db.php';
                         <button type="button"><img src="img/search.svg" alt="search" class="search-ico"/></button>
                         <div class="morph-content">
                             <div>
-                                <div class="content-style-form content-style-form-1">
+                                <div class="content-style-form content-style-form-1" width="">
                                     <span class="icon icon-close">Close the dialog</span>
-                                    <h2>Login</h2>
-                                    <form method="get" action="search.php">
-                                        <p><input type="text" name="search"/></p>
+                                    <form method="get" action="search.php" width="50%">
+                                        <p><input type="text" name="search" placeholder="Search..." style=""/></p>
                                         <p><input type="submit" class="end_submit">Search</p>
                                     </form>
                                 </div>
@@ -187,8 +186,7 @@ include 'db.php';
                     bttn.addEventListener( 'click', function( ev ) { ev.preventDefault(); } );
                 } );
             })();
-        </script>
-        <script>
+
             $(document).ready(function(){
                 $('input').iCheck({
                     checkboxClass: 'icheckbox_square-grey',
@@ -253,7 +251,7 @@ include 'db.php';
 
         #map {width:80%; height:100%; margin: 0 auto;}
 
-        .show_hide_checkbox_wrapper { float:left; width:960px; margin-top:15px; margin-bottom:30px; background:url(check_back.png) repeat-x; border-radius:15px; border:1px solid #eaeaea; }      
+        .show_hide_checkbox_wrapper { float:left; width:960px; margin-top:15px; margin-bottom:30px; background:url(check_back.png) repeat-x; border-radius:15px; border:1px solid #eaeaea; }
 
         .popup_summary_box {  }
 
@@ -276,15 +274,15 @@ include 'db.php';
           <div class="show_hide_checkbox_wrapper">
 
           <div id="mam_checkbox_wrapper">
-          <input type="checkbox" name="mam_checkbox" id="mam_checkbox" onclick="fn_mam_checked(this.checked);"/> Hide/Show Mammal Fellows
+          <input type="checkbox" name="mam_checkbox" id="mam_checkbox" onclick="fn_mam_checked(this.checked);"/> Hide/Show Birds
           </div>
 
           <div id="amp_checkbox_wrapper">
-          <input type="checkbox" name="amp_checkbox" id="amp_checkbox" onclick="fn_amp_checked(this.checked);"/> Hide/Show Amphibian Fellows
+          <input type="checkbox" name="amp_checkbox" id="amp_checkbox" onclick="fn_amp_checked(this.checked);"/> Hide/Show Frogs/Snakes
           </div>
 
           <div id="coral_checkbox_wrapper">
-          <input type="checkbox" name="coral_checkbox" id="coral_checkbox" onclick="fn_coral_checked(this.checked);"/> Hide/Show Coral Reef Fellows
+          <input type="checkbox" name="coral_checkbox" id="coral_checkbox" onclick="fn_coral_checked(this.checked);"/> Hide/Show Fish
           </div>
 
 

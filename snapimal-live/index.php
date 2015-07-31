@@ -10,7 +10,7 @@ include 'db.php';
         <title>Snapimal - Gotta snap 'em all</title>
         <meta name="description" content="Morphing Buttons Concept: Inspiration for revealing content by morphing the action element" />
         <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
-        <link rel="shortcut icon" href="http://snapimal.co/favicon.ico">
+        <link rel="shortcut icon" href="http://snapimal.co/img/favicon.ico">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
@@ -47,11 +47,12 @@ include 'db.php';
             <!-- Top Navigation -->
 
             <header class="codrops-header">
-                <img src="img/name.svg" alt="search" class="search-ico"/>
+                <img src="img/name.svg" alt="search" class="name-ico"/>
 
             </header>
 
             <section>
+
 
                 <div class="mockup-content">
 
