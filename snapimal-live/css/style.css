@@ -1,0 +1,25 @@
+.center {
+  text-align: center;
+}
+
+* {
+  margin: 0 0 0 0;
+}
+
+.search-ico:hover {
+  opacity: 0.8;
+  transition: 0.3s;#
+}
+.search-ico {transition: 0.7s;}
+
+.sub-ico {transition: 0.7s;}
+
+.sub-ico:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.name-ico {
+  padding-top: 0;
+  margin-top: 0 !important;
+}

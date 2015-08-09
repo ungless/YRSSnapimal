@@ -21,11 +21,13 @@ if ($error == UPLOAD_ERR_OK) {
     move_uploaded_file($tmp_name, "$uploads_dir/$name");
 }
 // Building query
-    $sql = "INSERT INTO $tbl_name (name, description, image, location) VALUES('"
+    $sql = "INSERT INTO $tbl_name (name, description, lon, lat, image, cat) VALUES('"
     . $_POST['name']  . "','"
-    . $_POST['description']  . "','"
-    . $name  . "','"
-    . $_POST['location']  .
+    . $_POST['description'] . "', '"
+    . $_POST['lon'] . "', '"
+    . $_POST['lat'] . "', '"
+    . $name  . "', '"
+    . $_POST['cat'] .
     "')";
 
     if (!mysql_query($sql)) {
@@ -34,7 +36,7 @@ if ($error == UPLOAD_ERR_OK) {
      print mysql_error();
 }
 
-    header('Location: http://max.dev/YRSSnapimal/index.php');
+    // header('Location: http://max.dev/YRSSnapimal/index.php');
     print 'image: <img src="image_uploads/'. $name . '"height="100px" width="100px"></br>';
 
     ?>
