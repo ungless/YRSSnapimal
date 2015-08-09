@@ -220,19 +220,13 @@
                   }
                   $markers = '';
                   while ($row = mysql_fetch_assoc($result)) {
-
-
                     $markers = $markers
-                      . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '],{ icon:' . $row['cat'] . ','
+                      . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '],{ icon:' . $row['cat'] . '.svg,'
                       . ' "title":"' . $row['name']
-                      . '", "tags":["Mammals"]}).bindPopup("<h1 align=\'center\'>'
+                      . '", "tags":["Mammals"]}).bindPopup("<h1 style=\"color: black;\" align=\'center\'>'
                       . $row['name'] . '</h1>'
                       . '"),';
-
                     }
-
-
-
                   /*  $markers = $markers
                       . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '],{ icon: new LeafIcon({iconUrl: \'image_uploads/'. $row['image'] . '\'})}, "title":"' . $row['name']
                       . '", "tags":["Mammals"]}).bindPopup("<h1 style=\"color: black;\"align=\'center\'>'
@@ -241,8 +235,6 @@
                       . $row['date'] . '</h4>'
                       . '"),';
                   } */
-
-
         ?>
 
         <style>
