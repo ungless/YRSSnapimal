@@ -65,7 +65,7 @@
 
 						<!-- New form -->
 
-						<div class="morph-content">
+						<div class="morph-content" style="overflow-y:scroll;">
                             <div>
                                 <div class="content-style-form content-style-form-2">
                                     <span class="icon icon-close">Close</span>
@@ -102,7 +102,8 @@
                                         </div>
 
                                        <input type="submit" class="end_submit" value="Submit">
-
+                                       <div style="height:120px;">
+                                       </div>
                                     </form>
                                 </div>
                             </div>
