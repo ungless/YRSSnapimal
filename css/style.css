@@ -7,13 +7,13 @@
 }
 
 @media screen and (min-width: 450px) and (max-width:600px){
-  .search-ico{
+  .titleimg{
     width: 350px;
   }
 }
 
 @media screen and (min-width: 150px) and (max-width:450px){
-  .search-ico{
+  .titleimg{
     width: 250px;
   }
 }

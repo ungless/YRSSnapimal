@@ -37,7 +37,7 @@
             <!-- Top Navigation -->
 
             <header class="codrops-header">
-                <img src="img/name.svg" alt="search" class="search-ico"/>
+                <img src="img/name.svg" alt="search" class="titleimg"/>
 
             </header>
 
