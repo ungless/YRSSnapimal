@@ -6,6 +6,18 @@
   margin: 0 0 0 0;
 }
 
+@media screen and (min-width: 450px) and (max-width:600px){
+  .search-ico{
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 150px) and (max-width:450px){
+  .search-ico{
+    width: 250px;
+  }
+}
+
 .search-ico:hover {
   opacity: 0.8;
   transition: 0.3s;
