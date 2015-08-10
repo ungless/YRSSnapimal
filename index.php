@@ -219,44 +219,24 @@
                     echo "Something went wrong! :(";
                     print mysql_error();
                   }
+
                   $markers = '';
                   while ($row = mysql_fetch_assoc($result)) {
                     $markers = $markers
-                      . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '], { icon: ' . $row['cat'] . ', "title":"' . $row['name']
-                      . '", "tags":"' . $row['cat'] . '"}).bindPopup("<h1 style=\"color: black;\" align=\'center\'>'
-                      . $row['name'] . '</h1>'
-                      . '"),';
-                    }
-                  /*  $markers = $markers
-                      . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '],{ icon: new LeafIcon({iconUrl: \'image_uploads/'. $row['image'] . '\'})}, "title":"' . $row['name']
-                      . '", "tags":["Mammals"]}).bindPopup("<h1 style=\"color: black;\"align=\'center\'>'
-                      . $row['name'] . '</h1><h2 style=\"color: black;\">Description: '
-                      . $row['description'] . '</h2><h4 style=\"color: black;\">Taken on: '
-                      . $row['date'] . '</h4>'
-                      . '"),';
-                  } */
-        ?>
+                     . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '], { icon: ' . $row['cat'] . ', "title":"'
+                     . $row['name']
+                     . '", "tags":"' . $row['cat'] . '"})
+                     .bindPopup("<h1 style=\"color: black;\" align=\'center\'>'
+                     . $row['name'] . '<img src=\'image_uploads/' . $row['image'] . '\' width=\'80%\'/><h2 style=\"color: black;\">'
+                     . $row['description']
+                     . '</h2>' . '"),';
+                   }
+                ?>
 
         <style>
-        html {width:100%; height:100%;}
         .map_wrapper { float:left; height: 40em; width:100%; }
-        #map {width:80%; height:100%; margin: 0 auto;}
-        .show_hide_checkbox_wrapper { float:left; width:960px; margin-top:15px; margin-bottom:30px; background:url(check_back.png) repeat-x; border-radius:15px; border:1px solid #eaeaea; }
-        .popup_summary_box {  }
-        #summary_title { font-family:Arial, Helvetica, sans-serif; font-weight:bold; letter-spacing:-1px; font-size:20px; color:#333; border-bottom:1px solid #CCCCCC; margin-bottom:10px; margin-top:10px;	}
-        #summary_title a:link { font-family:Arial, Helvetica, sans-serif; font-weight:bold; letter-spacing:-1px; font-size:20px; color:#b51f24;  margin-bottom:10px; margin-top:10px;	}
-        #summary_title a:visited { font-family:Arial, Helvetica, sans-serif; font-weight:bold; letter-spacing:-1px; font-size:20px; color:#b51f24; margin-bottom:10px; margin-top:10px;	}
-        #summary_title a:hover { font-family:Arial, Helvetica, sans-serif; font-weight:bold; letter-spacing:-1px; font-size:20px; color:#b51f24;  margin-bottom:10px; margin-top:10px;	}
-        #summary_content { font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#666; margin-bottom:10px;		}
-        #map h3 { margin-bottom:10px; color:#000; font-size:24px; border-bottom:1px solid #CCCCCC; letter-spacing:-1px;}
-        .popup_wrapper img {  margin-right:10px; border:1px solid #CCCCCC;}
-        #map p { margin:0px;}
-        .show_hide_checkbox_wrapper {
-          border: none;
-        }
-        .map-wrapper {
-          width: 100%;
-        }
+        #map { width:80%; height:80%; margin: 0 auto; }
+        .map-wrapper { width: 100%; }
         </style>
 
         <div class="map_wrapper">
