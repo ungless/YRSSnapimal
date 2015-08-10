@@ -87,8 +87,8 @@
                                               <option>Bird</option>
                                               <option>Amphibian</option>
                                               <option>Reptile</option>
-                                              <option>Water animal</option>
-                                              <option>Land Mammal</option>
+                                              <option name="water">Water animal</option>
+                                              <option name="mammal">Land Mammal</option>
                                             </select>
                                         <div style="float:left; width:100%; padding:0px 0px 10px 0px;">
 
@@ -221,9 +221,8 @@
                   $markers = '';
                   while ($row = mysql_fetch_assoc($result)) {
                     $markers = $markers
-                      . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '],{ icon:' . $row['cat'] . '.svg,'
-                      . ' "title":"' . $row['name']
-                      . '", "tags":["Mammals"]}).bindPopup("<h1 style=\"color: black;\" align=\'center\'>'
+                      . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '], { icon: ' . $row['cat'] . ', "title":"' . $row['name']
+                      . '", "tags":"' . $row['cat'] . '"}).bindPopup("<h1 style=\"color: black;\" align=\'center\'>'
                       . $row['name'] . '</h1>'
                       . '"),';
                     }
@@ -305,29 +304,17 @@
                 popupAnchor:  [-3, -76]
             }
         });
-        var mamIcon = new LeafIcon({iconUrl: 'img/elephant.svg'}),
-            watIcon = new LeafIcon({iconUrl: 'img/fish.svg'}),
-            ampIcon = new LeafIcon({iconUrl: 'img/from.svg'}),
-        	  repIcon = new LeafIcon({iconUrl: 'img/lizard.svg'});
-            brdIcon = new LeafIcon({iconUrl: 'img/bird.svg'});
+        var mammal = new LeafIcon({iconUrl: 'img/mammal.svg'}),
+            water = new LeafIcon({iconUrl: 'img/fish.svg'}),
+            Amphibian = new LeafIcon({iconUrl: 'img/Amphibian.svg'}),
+        	  Reptile = new LeafIcon({iconUrl: 'img/Reptile.svg'});
+            Bird = new LeafIcon({iconUrl: 'img/bird.svg'});
         <!-- No Icon in there to cater for the one extra entry -->
         var markers = [
         <?php echo $markers; ?>
         ]
         startup()
         </script>
-
-        <!-- Fire the first sub query to fetch the Geo Lat now we know the fellow IDs -->
-
-        <!-- Fire the second sub query to fetch the Geo lon now we know the fellow IDs -->
-
-        <!-- Fire the third sub query to fetch their image and some bling now that we know their fellow ID -->
-
-        <!-- Fire the fourth sub query to fetch their meta / species type / favourite ice cream now that we know their fellow ID -->
-
-        <!-- Let's reconstruct all of the data into a map marker -->
-
-        <!-- End getting SQL data -->
 
         <!-- This is our code to show markers
         for(i=0; i<=markers.length; i++){
@@ -342,65 +329,64 @@
 </div>
 
 
-      <script>
-function fn_mam_checked(mam_checked)
-{
-if(mam_checked)
-{
-for(i=0; i<=markers.length; i++){
-if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
-map.removeLayer(markers[i]);
-}
-}
-}
-else
-{
-for(i=0; i<=markers.length; i++){
-if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
-map.addLayer(markers[i]);
-}
-}
-}
-}
-function fn_amp_checked(amp_checked)
-{
-if(amp_checked)
-{
-for(i=0; i<=markers.length; i++){
-if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
-map.removeLayer(markers[i]);
-}
-}
-}
-else
-{
-for(i=0; i<=markers.length; i++){
-if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
-map.addLayer(markers[i]);
-}
-}
-}
-}
-function fn_coral_checked(coral_checked)
-{
-if(coral_checked)
-{
-for(i=0; i<=markers.length; i++){
-if(markers[i] && markers[i].options.tags.indexOf("Coral reef")> -1){
-map.removeLayer(markers[i]);
-}
-}
-}
-else
-{
-for(i=0; i<=markers.length; i++){
-if(markers[i] && markers[i].options.tags.indexOf("Coral reef")> -1){
-map.addLayer(markers[i]);
-}
-}
-}
-}
-</script>
-
-    </body>
+  <script>
+        function fn_mam_checked(mam_checked)
+      {
+      if(mam_checked)
+      {
+        for(i=0; i<=markers.length; i++){
+          if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
+            map.removeLayer(markers[i]);
+          }
+        }
+      }
+      else
+      {
+        for(i=0; i<=markers.length; i++){
+          if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
+            map.addLayer(markers[i]);
+          }
+        }
+      }
+    }
+      function fn_amp_checked(amp_checked)
+      {
+      if(amp_checked)
+      {
+        for(i=0; i<=markers.length; i++){
+          if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
+            map.removeLayer(markers[i]);
+          }
+        }
+      }
+      else
+      {
+        for(i=0; i<=markers.length; i++){
+          if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
+            map.addLayer(markers[i]);
+          }
+        }
+      }
+      }
+        function fn_coral_checked(coral_checked)
+      {
+      if(coral_checked)
+      {
+        for(i=0; i<=markers.length; i++){
+          if(markers[i] && markers[i].options.tags.indexOf("Birds")> -1){
+            map.removeLayer(markers[i]);
+          }
+        }
+      }
+      else
+      {
+        for(i=0; i<=markers.length; i++){
+          if(markers[i] && markers[i].options.tags.indexOf("Birds")> -1){
+            map.addLayer(markers[i]);
+          }
+        }
+      }
+      }
+    </script>
+</body>
 </html>
