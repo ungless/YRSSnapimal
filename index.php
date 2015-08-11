@@ -226,10 +226,10 @@
                      . 'L.marker([' . $row['lat'] . ',' . $row['lon'] . '], { icon: ' . $row['cat'] . ', "title":"'
                      . $row['name']
                      . '", "tags":"' . $row['cat'] . '"})
-                     .bindPopup("<h1 style=\"color: black;\" align=\'center\'>'
-                     . $row['name'] . '<img src=\'image_uploads/' . $row['image'] . '\' width=\'80%\'/><h2 style=\"color: black;\">'
+                     .bindPopup("<h1 style=\"color: black; padding: 1em 0 ;\" align=\'center\'>'
+                     . $row['name'] . '<img src=\'image_uploads/' . $row['image'] . '\' width=\'80%\'/><h3 style=\"color: black;\">'
                      . $row['description']
-                     . '</h2>' . '"),';
+                     . '</h3>' . '"),';
                    }
                 ?>
 
