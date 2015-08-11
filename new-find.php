@@ -27,6 +27,10 @@ if ($error == UPLOAD_ERR_OK) {
     if (!mysql_query($sql)) {
       echo "Something went wrong! :(";
     }
+    if ($_POST['name', 'description'] == '')
+    {
+      echo 'You must have a name!';
+    }
      print mysql_error();
 }
     // header('Location: http://max.dev/YRSSnapimal/index.php');
