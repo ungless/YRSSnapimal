@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="612" height="792" viewBox="0, 0, 612, 792">
+  <g id="Background">
+    <rect x="0" y="0" width="612" height="792" fill="#FFFFFF" fill-opacity="0"/>
+  </g>
+  <defs>
+    <linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="-59.832" y1="353.219" x2="200.168" y2="353.219" gradientTransform="matrix(0.934, -0.358, 0.358, 0.934, 0, 0)">
+      <stop offset="1" stop-color="#000000"/>
+      <stop offset="0.733" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="Gradient_2" gradientUnits="userSpaceOnUse" x1="146" y1="274" x2="406" y2="274">
+      <stop offset="1" stop-color="#000000"/>
+      <stop offset="0.733" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="Gradient_3" gradientUnits="userSpaceOnUse" x1="254.894" y1="212.607" x2="514.894" y2="212.607" gradientTransform="matrix(0.993, 0.122, -0.122, 0.993, 0, 0)">
+      <stop offset="1" stop-color="#000000"/>
+      <stop offset="0.733" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1">
+    <g>
+      <path d="M12,234.493 L279.004,132 L390.815,423.277 L123.811,525.77 L12,234.493 z" fill="#D9D9D9"/>
+      <path d="M28.795,241.971 L271.526,148.795 L355.384,367.253 L112.653,460.429 L28.795,241.971 z" fill="url(#Gradient_1)"/>
+    </g>
+    <g>
+      <path d="M133,144 L419,144 L419,456 L133,456 L133,144 z" fill="#FFF6E3"/>
+      <path d="M146,157 L406,157 L406,391 L146,391 L146,157 z" fill="url(#Gradient_2)"/>
+    </g>
+    <g>
+      <path d="M230.023,111.471 L513.891,146.326 L475.868,456 L192,421.145 L230.023,111.471 z" fill="#E7E1D5"/>
+      <path d="M241.342,125.958 L499.404,157.644 L470.887,389.9 L212.825,358.214 L241.342,125.958 z" fill="url(#Gradient_3)"/>
+    </g>
+  </g>
+</svg>
