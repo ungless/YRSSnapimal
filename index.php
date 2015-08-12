@@ -203,7 +203,7 @@
             echo '<li style="list-style-type: none; float: left; display: inline; margin: 0; height: 100%; background-color: #67C2D4; text-align: center; padding: 0 !important; width: 20%; text-align: center;">
             <div style="display: inline; background-color: white; "><h2>'
             . $row['name'] .
-            '<div class="image" style="background-color: white;"> <img class="bottom-images" style="padding: 0 0; width: 100%; background-color: white; margin: 0 0 0 0; " src="image_uploads/'
+            '<div style="background-color: white;"> <img class="bottom-images" style="padding: 0 0; width: 100%; background-color: white; margin: 0 0 0 0; " src="image_uploads/'
              . $row['image'] . '" title="' . $row['name'] . '"/></div>
             </h2></div>
             </li>'."\n";
@@ -235,7 +235,7 @@
 
         <style>
         .map_wrapper { float:left; height: 40em; width:100%; }
-        #map { width:80%; height: 100%; margin: 5% auto !important; border-radius: 4px;}
+        #map { width:80%; height:80%; margin: 0 auto; }
         .map-wrapper { width: 100%; }
         </style>
 

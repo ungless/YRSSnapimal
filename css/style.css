@@ -42,15 +42,3 @@
   font-size: 20;
   padding-top: none;
 }
-
-.bottom-images {
-background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
-width: 100%;
-height: auto;
-}
-
-.bottom-images a {
-display: block;
-width: 250px;
-height: 250px;
-}
