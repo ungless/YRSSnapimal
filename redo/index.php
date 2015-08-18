@@ -27,11 +27,14 @@
         <img src="img/plus.svg" alt="Submit" />
       </div>
       <div class="intro">
-        <h3>Interact with other animal entuisiests and protect animals from hunting. Together. Snapimal works simply with three steps</h3>
+        <h3>Interact with other animal entuisiests and protect animals from hunting.
+          Together. Snapimal works simply with three steps</h3>
           <dt>
             <span class="step-title">Submit your animal</span>
             <p>
-              Add a photo, name, type and description to your find and submit it to the community! Your followers will automatically see this, and others will see it on the map!
+              Add a photo, name,
+              type and description to your find and submit it to the community!
+              Your followers will automatically see this, and others will see it on the map.
             </p>
           </dt>
 

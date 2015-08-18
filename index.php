@@ -87,8 +87,8 @@
                                               <option>Bird</option>
                                               <option>Amphibian</option>
                                               <option>Reptile</option>
-                                              <option name="water">Water animal</option>
-                                              <option name="mammal">Land Mammal</option>
+                                              <option value="water">Water animal</option>
+                                              <option value="mammal">Land Mammal</option>
                                             </select>
                                         <div style="float:left; width:100%; padding:0px 0px 10px 0px;">
 
@@ -316,7 +316,7 @@
       if(mam_checked)
       {
         for(i=0; i<=markers.length; i++){
-          if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
+          if(markers[i] && markers[i].options.tags.indexOf("mammal")> -1){
             map.removeLayer(markers[i]);
           }
         }
@@ -324,18 +324,18 @@
       else
       {
         for(i=0; i<=markers.length; i++){
-          if(markers[i] && markers[i].options.tags.indexOf("Mammals")> -1){
+          if(markers[i] && markers[i].options.tags.indexOf("mammal")> -1){
             map.addLayer(markers[i]);
           }
         }
-      }
+
     }
       function fn_amp_checked(amp_checked)
       {
       if(amp_checked)
       {
         for(i=0; i<=markers.length; i++){
-          if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
+          if(markers[i] && markers[i].options.tags.indexOf("Amphibian")> -1){
             map.removeLayer(markers[i]);
           }
         }
@@ -343,18 +343,18 @@
       else
       {
         for(i=0; i<=markers.length; i++){
-          if(markers[i] && markers[i].options.tags.indexOf("Amphibians")> -1){
+          if(markers[i] && markers[i].options.tags.indexOf("Amphibian")> -1){
             map.addLayer(markers[i]);
           }
         }
       }
       }
-        function fn_coral_checked(coral_checked)
+        function fn_brd_checked(brd_checked)
       {
-      if(coral_checked)
+      if(brd_checked)
       {
         for(i=0; i<=markers.length; i++){
-          if(markers[i] && markers[i].options.tags.indexOf("Birds")> -1){
+          if(markers[i] && markers[i].options.tags.indexOf("Bird")> -1){
             map.removeLayer(markers[i]);
           }
         }
@@ -362,12 +362,50 @@
       else
       {
         for(i=0; i<=markers.length; i++){
-          if(markers[i] && markers[i].options.tags.indexOf("Birds")> -1){
+          if(markers[i] && markers[i].options.tags.indexOf("Bird")> -1){
             map.addLayer(markers[i]);
           }
         }
       }
       }
+      function fn_wat_checked(wat_checked)
+    {
+    if(wat_checked)
+    {
+      for(i=0; i<=markers.length; i++){
+        if(markers[i] && markers[i].options.tags.indexOf("water")> -1){
+          map.removeLayer(markers[i]);
+        }
+      }
+    }
+    else
+    {
+      for(i=0; i<=markers.length; i++){
+        if(markers[i] && markers[i].options.tags.indexOf("water")> -1){
+          map.addLayer(markers[i]);
+        }
+      }
+    }
+    }
+    function fn_rep_checked(rep_checked)
+  {
+  if(rep_checked)
+  {
+    for(i=0; i<=markers.length; i++){
+      if(markers[i] && markers[i].options.tags.indexOf("Reptile")> -1){
+        map.removeLayer(markers[i]);
+      }
+    }
+  }
+  else
+  {
+    for(i=0; i<=markers.length; i++){
+      if(markers[i] && markers[i].options.tags.indexOf("Reptile")> -1){
+        map.addLayer(markers[i]);
+      }
+    }
+  }
+  }
     </script>
 </body>
 </html>
