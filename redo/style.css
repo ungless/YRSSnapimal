@@ -1,0 +1,21 @@
+.icons-menu {
+  margin: 0 auto;
+}
+
+.container {
+  text-align: center;
+  float: center;
+}
+
+.step-title {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.intro {
+	counter-reset: my-badass-counter;
+}
+.intro dt:before {
+	content: counter(my-badass-counter);
+	counter-increment: my-badass-counter;
+}
