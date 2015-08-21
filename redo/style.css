@@ -12,10 +12,3 @@
   display: inline-block;
 }
 
-.intro {
-	counter-reset: my-badass-counter;
-}
-.intro dt:before {
-	content: counter(my-badass-counter);
-	counter-increment: my-badass-counter;
-}

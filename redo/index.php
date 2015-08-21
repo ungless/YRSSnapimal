@@ -19,12 +19,12 @@
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
         <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-      </head>
+      </head> 515 LTH
   <body>
     <div class="container">
       <div class="icons-menu">
-        <img src="img/search.svg" alt="Search" />
-        <img src="img/plus.svg" alt="Submit" />
+        <img class="icons search" src="img/search.svg" alt="Search" />
+        <img class="icons submit" src="img/plus.svg" alt="Submit" />
       </div>
       <div class="intro">
         <h3>Interact with other animal entuisiests and protect animals from hunting.
@@ -39,21 +39,14 @@
           </dt>
 
           <dt>
-            <span class="step-title">Interect</span>
+             <span class="step-title">Interect</span>
             <p>
-              The comment section is there for a reason! Discuss the find with your friends!
+              The comment section is there for a reason. Discuss the find with your friends!
             </p>
           </dt>
       </div>
-      <div class="sign-up">
-        <a href="#sign"><h1 href="#sign">Sign up</h1></a>
-        <form id="sign" action="" method="post">
-          <div class="form">
-            <input class="sign-forms" type="text" name="name" value="" placeholder="Username...">
-            <input class="sign-forms" type="password" name="name" value="" placeholder="Password...">
-          </div>
-          <input class="sign-submit" type="submit" name="Sign Up" value="Sign Up">
-        </form>
+      <div class="sign-up-container">
+
       </div>
     </div>
 
