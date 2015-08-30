@@ -1,14 +1,19 @@
-.icons-menu {
-  margin: 0 auto;
-}
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-.container {
+.nav-elements a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;  
+  color: black;
+  font-size: 18px;
+  width: 15%;
+  padding: 1.5em;
   text-align: center;
-  float: center;
+}
+.logo img {
+  width: 55%;
 }
 
-.step-title {
-  font-weight: bold;
+.search input {
   display: inline-block;
 }
-

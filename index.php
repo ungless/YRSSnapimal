@@ -256,7 +256,7 @@
 
           <div id="amp_checkbox_wrapper" class="checkbox-wrapper">
           <input type="checkbox" class="type_check" name="amp_checkbox" id="amp_checkbox" onclick="fn_amp_checked(this.checked);"/> Hide/Show Amphibians
-          </div
+          </div>
           <div id="mam_checkbox_wrapper" class="checkbox-wrapper">
           <input type="checkbox" class="type_check" name="mam_checkbox" id="mam_checkbox" onclick="fn_mam_checked(this.checked);"/> Hide/Show Land mammals
           </div>
@@ -290,7 +290,7 @@
             Amphibian = new LeafIcon({iconUrl: 'img/Amphibian.svg'}),
         	  Reptile = new LeafIcon({iconUrl: 'img/Reptile.svg'});
             Bird = new LeafIcon({iconUrl: 'img/bird.svg'});
-        <!-- No Icon in there to cater for the one extra entry -->
+        // No Icon in there to cater for the one extra entry 
         var markers = [
         <?php echo $markers; ?>
         ]
