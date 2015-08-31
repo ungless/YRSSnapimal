@@ -3,9 +3,9 @@
 // Set up our MySQL connection data
     $host="localhost"; // Host name
     $username="coderkid"; // Mysql username
-    $password="k3rnisH windz preux @udio"; // Mysql password
-    $db_name="coderkid_snapimal"; // Database name
-    $tbl_name="submissions"; // Table name
+    $password="---"; // Mysql password
+    $db_name="---"; // Database name
+    $tbl_name="---"; // Table name
 
     // Connect to server and select database.
     $link = mysql_connect($host, $username, $password);
