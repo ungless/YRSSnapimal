@@ -9,6 +9,6 @@
     <a href="">News</a>
     <form class="search" action="#" >
       <input type="search" placeholder="Search...">
-    </form>
+    </form> 
   </div>
 </nav>
