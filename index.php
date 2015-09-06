@@ -290,7 +290,7 @@
             Amphibian = new LeafIcon({iconUrl: 'img/Amphibian.svg'}),
         	  Reptile = new LeafIcon({iconUrl: 'img/Reptile.svg'});
             Bird = new LeafIcon({iconUrl: 'img/bird.svg'});
-        // No Icon in there to cater for the one extra entry 
+        <!-- No Icon in there to cater for the one extra entry -->
         var markers = [
         <?php echo $markers; ?>
         ]
