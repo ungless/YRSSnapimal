@@ -3,12 +3,13 @@
   <img src="img/name.svg">
 </div>
   <div class="nav-elements">
-    <a href="">Home</a>
-    <a href="">Map</a>
-    <a href="">Groups</a>
+    <a href="index.php">Home</a>
+    <a href="submit-find.php">Submit a find</a>
+    <a href="group.php">Groups</a>
     <a href="">News</a>
     <form class="search" action="#" >
-      <input type="search" placeholder="Search...">
+      <input type="search" 
+      placeholder="Search Groups">
     </form> 
   </div>
 </nav>

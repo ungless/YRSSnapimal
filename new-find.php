@@ -31,4 +31,4 @@ if ($error == UPLOAD_ERR_OK) {
 }
     // header('Location: http://max.dev/YRSSnapimal/index.php');
     print 'image: <img src="image_uploads/'. $name . '"height="100px" width="100px"></br>';
-    ?>
+?>
