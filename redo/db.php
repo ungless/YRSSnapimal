@@ -6,8 +6,7 @@
     $password=""; // Mysql password
     $db_name="snapimal-animals"; // Database name
     $tbl_name="submissions"; // Table name
-    
-    // Connect to server and select database.
+
     $link = mysql_connect($host, $username, $password);
     // If connection doesn't work, return mysql error
     if (!$link) {

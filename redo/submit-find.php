@@ -11,21 +11,17 @@
 </head>
 <body>
   <form action="submit.php" class="submit">
-    <label>
-    Name
-      <input type="text" 
-      placeholder="e.g. Golden Eagle" required>
-    </label>
+      <label for="name">name</label>
+      <input name="name" type="text" 
+      placeholder="e.g. Golden Eagle">
+    </br>
+    <label for="description">Description</label>
+      <textarea name="description"
+      placeholder=
+      "e.g. Bright feathers and a long neck, found it in a relatively big nest."></textarea>
+    </br>
 
-    <label>
-    Description
-      <textarea 
-      placeholder="e.g. Bright feathers and a long neck, 
-      found it in a relatively big nest."></textarea>
-    </label>
-
-    <label>
-    Group
+    <label for="group">Group</label>
       <select name="group" required>
         <?php 
         $select_from_db = "SELECT * FROM $tbl_name ORDER BY id desc";
@@ -40,22 +36,12 @@
           }
         ?>
       </select> 
-    </label>
+    </br>
 
-    <label>
-    Sex
-      <label>Male <input type="radio" 
-      name="sex-of-animal"></label> 
-      <label>Female <input type="radio" 
-      name="sex-of-animal"></label>
-      <label>Not specified <input type="radio" 
-      name="sex-of-animal" checked></label>
-    </label>
-
-    <label>Image
+    <label for="image">Image</label>
         <input type="file" name="image" 
-        allowed=".gif, .jpg, .png" required/>
-    </label>
+        allowed=".gif, .jpg, .png, .jpeg"/>
+    
     <input type="submit" value="Submit animal"> 
   </form>
 </body>

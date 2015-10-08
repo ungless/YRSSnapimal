@@ -55,5 +55,27 @@
 			<input type="submit" value="Create Group">
 		</form>
 	</section>
+
+	<section class="select-group">
+		<?php 
+        $select_from_db = "SELECT * FROM groups ORDER BY id desc";
+        $result = mysql_query($select_from_db);
+          if (!$result) {
+            echo "Something went wrong! :( Please contact the system admininstrator. 
+              Oh wait. That's me.";
+            print mysql_error();
+          }
+          while ($row = mysql_fetch_assoc($result)) {
+            echo '<a href="?name=' . $row["Name"] . '">' . $row["Name"] . '</a></br>';
+          } 
+          if ($_GET['name'] = $row["Name"]) { 
+          		$current_name = $row["Name"];
+          	?>
+          	<h1><?php echo $current_name; ?></h1>
+
+         <?php }else {
+         		echo 'What is up with these GET variables man.';
+         	} ?>
+	</section>
 </body>
 </html>

@@ -11,7 +11,7 @@
 			"file": "redo/index.php",
 			"settings":
 			{
-				"buffer_size": 2790,
+				"buffer_size": 2780,
 				"line_ending": "Windows"
 			}
 		},
@@ -27,7 +27,7 @@
 			"file": "redo/style.css",
 			"settings":
 			{
-				"buffer_size": 7402,
+				"buffer_size": 7481,
 				"line_ending": "Windows"
 			}
 		},
@@ -56,10 +56,13 @@
 			}
 		},
 		{
+			"contents": "<?php\n// includes the database settings\ninclude ('db.php');\n// Make sure the project name and description exists.\nif ( isset($_POST['name']) && isset($_POST['description'])) {\n// Tests if image and location are called in document\nif ( !isset($_POST['image'] )){$_POST['image'] = \"\" ;}\nif ( !isset($_POST['location'] )){$_POST['location'] = \"\" ;}\nvar_dump( $_FILES );\nprint_r( $_FILES );\n$uploads_dir = 'C:/xampp/htdocs/YRSSnapimal/image_uploads';\n$error = $_FILES[\"image\"][\"error\"];\nif ($error == UPLOAD_ERR_OK) {\n    $tmp_name = $_FILES[\"image\"][\"tmp_name\"];\n    $name = $_FILES[\"image\"][\"name\"];\n    move_uploaded_file($tmp_name, \"$uploads_dir/$name\");\n}\n// Building query\n    $sql = \"INSERT INTO $tbl_name (name, description, lon, lat, image, cat) VALUES('\"\n    . $_POST['name']  . \"','\"\n    . $_POST['description'] . \"', '\"\n    . $_POST['lon'] . \"', '\"\n    . $_POST['lat'] . \"', '\"\n    . $name  . \"', '\"\n    . $_POST['cat'] .\n    \"')\";\n    if (!mysql_query($sql)) {\n      echo \"Something went wrong! :(\";\n    }\n     print mysql_error();\n}\n    // header('Location: http://max.dev/YRSSnapimal/index.php');\n    print 'image: <img src=\"image_uploads/'. $name . '\"height=\"100px\" width=\"100px\"></br>';\n?>\n",
 			"file": "new-find.php",
+			"file_size": 1203,
+			"file_write_time": 130868574592153809,
 			"settings":
 			{
-				"buffer_size": 1207,
+				"buffer_size": 1203,
 				"line_ending": "Unix"
 			}
 		}
@@ -192,15 +195,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2790,
+						"buffer_size": 2780,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2621,
-								2621
+								0,
+								0
 							]
 						],
 						"settings":
@@ -212,10 +215,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1518.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -243,7 +246,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 264.0,
+						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -255,15 +258,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7402,
+						"buffer_size": 7481,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5521,
-								5521
+								0,
+								0
 							]
 						],
 						"settings":
@@ -274,10 +277,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7514.0,
+						"translation.y": 10175.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -293,8 +296,8 @@
 						"selection":
 						[
 							[
-								149,
-								149
+								341,
+								318
 							]
 						],
 						"settings":
@@ -309,7 +312,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -325,8 +328,8 @@
 						"selection":
 						[
 							[
-								602,
-								602
+								633,
+								633
 							]
 						],
 						"settings":
@@ -339,7 +342,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -355,8 +358,8 @@
 						"selection":
 						[
 							[
-								1446,
-								1446
+								428,
+								382
 							]
 						],
 						"settings":
@@ -370,7 +373,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -379,25 +382,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1207,
+						"buffer_size": 1203,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								656,
-								656
+								1014,
+								1014
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"color_scheme": "Packages/User/Color Highlighter/themes/brogrammer.tmTheme",
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
