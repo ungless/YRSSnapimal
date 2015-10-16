@@ -6,9 +6,8 @@ if ( isset($_POST['name']) && isset($_POST['description'])) {
 // Tests if image and location are called in document
 if ( !isset($_POST['image'] )){$_POST['image'] = "" ;}
 if ( !isset($_POST['location'] )){$_POST['location'] = "" ;}
-var_dump( $_FILES );
-print_r( $_FILES );
-$uploads_dir = 'C:/xampp/htdocs/YRSSnapimal/image_uploads';
+
+$uploads_dir = 'B:\Sites\YRSSnapimal\redo\image_uploads';
 $error = $_FILES["image"]["error"];
 if ($error == UPLOAD_ERR_OK) {
     $tmp_name = $_FILES["image"]["tmp_name"];
@@ -30,5 +29,5 @@ if ($error == UPLOAD_ERR_OK) {
      print mysql_error();
 }
     // header('Location: http://max.dev/YRSSnapimal/index.php');
-    print 'image: <img src="image_uploads/'. $name . '"height="100px" width="100px"></br>';
+    echo 'image: <img src="image_uploads/'. $name . '"height="100px" width="100px"></br>';
     ?>

@@ -32,6 +32,10 @@ $shadow-color: #3e4c5e; //rgba(62, 76, 94, 100)
   padding: 0;
 }
 
+input:hover {
+  border: 1px solid $main-color;
+}
+
 .nav-elements a {
   text-decoration: none;
   font-family: 'Oswald', sans-serif;
@@ -60,7 +64,7 @@ nav {
     font-size: 19px;
     transition: 0.09s;
     padding: 0.01em;
-
+s
     &:focus {
       border: 1px solid $accent-color;
       transition: 0.1s;
@@ -260,7 +264,7 @@ h1, h2 {
 label {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
-  margin: 0.3em;
+  display: block;
 }
 
 /* Description of code */
@@ -315,7 +319,7 @@ select {
 }
 
 select:hover {
-  border: 2px solid $accent-color;
+  border: 2px solid $main-color;
 }
 
 .submit input:focus, textarea:focus {
@@ -334,6 +338,9 @@ select:hover {
   
 }
 
+.submit input[name="lat"], .submit input[name="lon"] {
+  width: 20%;
+}
 .submit input[type="file"] {
   cursor: pointer;
   border: none;
@@ -454,7 +461,7 @@ select:hover {
   .nav-elements a {
     font-size: 1.4em;
     width: 25%;
-
+    display: none;
   }
 
   .nav-elements .search input {

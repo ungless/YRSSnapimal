@@ -10,8 +10,13 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <form action="submit.php" class="submit">
-      <label for="name">name</label>
+<style>
+  .search { 
+    display: none;
+  }
+</style>
+  <form action="new-animal.php" class="submit" method="post" enctype="multipart/form-data">
+      <label for="name">Name</label>
       <input name="name" type="text" 
       placeholder="e.g. Golden Eagle">
     </br>
@@ -37,10 +42,21 @@
         ?>
       </select> 
     </br>
+  <input type="file" name="image" required/>
+  <label for="lat">Latitude</label>
+    <input type="int" name="lat" placeholder="Latitude">
 
-    <label for="image">Image</label>
-        <input type="file" name="image" 
-        allowed=".gif, .jpg, .png, .jpeg"/>
+  <label for="lon">Longitude</label>
+    <input type="int" name="lon" placeholder="Longitude">
+
+    <label for="cat">Cat</label>
+    <select class="" name="cat">
+      <option>Bird</option>
+      <option>Amphibian</option>
+      <option>Reptile</option>
+      <option value="water">Water animal</option>
+      <option value="mammal">Land Mammal</option>
+    </select>
     
     <input type="submit" value="Submit animal"> 
   </form>

@@ -32,21 +32,10 @@ gulp.task('img', function() {
     .pipe(gulp.dest('production/img'));
   });
 
-gulp.task('html', function(cb) {
-  phplint(['*.php'], {limit: 10}, function (err, stdout, stderr) {
-    if (err) {
-      cb(err)
-      process.exit(1)
-    }
-    cb()
-  })
-  .pipe(gulp.dest('production/'));
-});
-
 gulp.task('default',function() {
     gulp.watch('scss/*.scss',['css']).on('change', browserSync.reload);
     gulp.watch('js/*.js', ['js']).on('change', browserSync.reload);
-    gulp.watch('*.php', ['html']).on('change', browserSync.reload);
+    gulp.watch('*.php').on('change', browserSync.reload);
     browserSync.init({
         proxy: "localhost"
     });
